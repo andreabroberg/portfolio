@@ -1,41 +1,301 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Andrea Broberg - Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            text-align: center;
-            padding: 50px;
-        }
-        h1 {
-            color: #333;
-        }
-        .box {
-            background: white;
-            padding: 30px;
-            margin: 20px auto;
-            width: 60%;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andrea Broberg | Growth Strategist</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
+    <div id="custom-cursor" class="custom-cursor"></div>
 
-    <h1>Hej, jag är Andrea 👋</h1>
+    <nav class="navbar">
+        <div class="nav-logo">Andrea Broberg</div>
+        <div class="nav-links">
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button class="menu-toggle" id="menu-toggle">
+            <i data-lucide="menu"></i>
+        </button>
+    </nav>
 
-    <div class="box">
-        <h2>Om mig</h2>
-        <p>Här kan du skriva en kort presentation om dig själv.</p>
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
     </div>
 
-    <div class="box">
-        <h2>Mina projekt</h2>
-        <p>Projekt kommer här.</p>
+    <!-- Floating Quote Widget (Now Playing Style) -->
+    <div class="quote-widget" id="quote-widget">
+        <div class="widget-content">
+            <div class="widget-text">
+                <span class="widget-label">Quote of the Day</span>
+                <p id="quote-text" class="widget-quote">"Quality is not an act, it is a habit."</p>
+                <p id="quote-author" class="widget-author">Aristotle</p>
+            </div>
+            <button id="new-quote-btn" class="widget-refresh">
+                <i data-lucide="refresh-cw"></i>
+            </button>
+        </div>
     </div>
 
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title reveal">Andrea <br> Broberg</h1>
+                    <div class="hero-footer flex-between reveal" style="transition-delay: 0.4s">
+                        <div class="hero-description">
+                            <p>Growth Marketer specializing in <span class="text-black">data-driven strategies</span> and scaling digital products through intent.</p>
+                        </div>
+                        <div class="hero-meta">
+                            <div class="meta-label">Portfolio 2025</div>
+                            <div class="meta-location">
+                                <span>Stockholm, SE</span>
+                                <div class="line"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-bg"></div>
+            <div class="scroll-indicator reveal" style="transition-delay: 1.5s">
+                <div class="scroll-line"></div>
+                <div class="scroll-text">Explore</div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+<section id="about" class="about">
+    <div class="container">
+        <div class="about-grid">
+
+            <div class="about-image reveal">
+                <img src="images/andrea_broberg_portfolio_profilbild.jpg"
+                     alt="Andrea Broberg"
+                     class="img-grayscale">
+            </div>
+
+
+                    <div class="about-content reveal" style="transition-delay: 0.2s">
+                        <div class="section-meta">02 / About</div>
+                        <h2 class="section-title">About Me</h2>
+                        <p class="about-lead">After completing the Growth Marketing program at Berghs School of Communication and gaining experience in performance marketing at Appelberg, I am now looking for new opportunities where I can contribute with strategic thinking, digital execution and a growth-driven mindset.</p>
+                        
+                        <div class="expertise-section">
+                            <h3 class="expertise-label">// Core Expertise</h3>
+                            <div class="expertise-tags">
+                                <div class="tag"><span class="dot"></span>Brand Positioning</div>
+                                <div class="tag"><span class="dot"></span>CRM Automation</div>
+                                <div class="tag"><span class="dot"></span>Funnel Optimization</div>
+                                <div class="tag"><span class="dot"></span>GTM Strategy</div>
+                                <div class="tag"><span class="dot"></span>Performance Audit</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <div class="projects-header flex-between">
+                    <div>
+                        <div class="section-meta">// Selected Work</div>
+                        <h2 class="projects-title">Projects</h2>
+                    </div>
+                    <div class="projects-intro">
+                        Every project delivered is a reflection of commitment to quality, designed to inspire and drive success.
+                    </div>
+                </div>
+
+                <div class="projects-grid">
+   <!-- Project 1 -->
+<a href="project-recycle-life.html" class="project-card reveal">
+
+  <div class="project-image-wrapper">
+    <img src="images/Dagens_viktigaste_kopp.png" alt="Recycle Life">
+    <div class="project-overlay">
+      <div class="overlay-icon">
+        <i data-lucide="arrow-up-right"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-info">
+    <div class="project-header-row">
+      <h3 class="project-name">Recycle Life</h3>
+      <span class="project-category">ÅTERVINN DIN K(R)OPP</span>
+    </div>
+
+    <p class="project-desc">
+      Kort beskrivning här (1–2 meningar), i samma stil som GLASSR-texten.
+    </p>
+  </div>
+
+</a>
+
+</a>
+</a>
+
+</a>
+                    <!-- Project 2 -->
+                    <div class="project-card reveal">
+                        <div class="project-image-wrapper">
+                            <img src="images/glassr_rätt.jpg" alt="GLASSR">
+                            <div class="project-overlay">
+                                <div class="overlay-icon">
+                                    <i data-lucide="arrow-up-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-header-row">
+                                <h3 class="project-name">GLASSR</h3>
+                                <span class="project-category">When safety becomes part of the culture</span>
+                            </div>
+                            <p class="project-desc">GLASSR is a safety concept for nightlife environments designed to make prevention visible without feeling clinical. The project focused on positioning, partner-based distribution, and scalable growth strategy.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card reveal">
+                        <div class="project-image-wrapper">
+                            <img src="images/akademibokhandeln_rätt.png" alt="Digital detox">
+                            <div class="project-overlay">
+                                <div class="overlay-icon">
+                                    <i data-lucide="arrow-up-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-header-row">
+                                <h3 class="project-name">Digital detox</h3>
+                                <span class="project-category">Category Repositioning</span>
+                            </div>
+                            <p class="project-desc">Akademibokhandeln’s non-book category lacked visibility despite strong revenue potential. We leveraged the digital detox trend to reposition the assortment as a solution for screen fatigue, developing a funnel-based content strategy across social and SEO to drive measurable growth.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card reveal">
+                        <div class="project-image-wrapper">
+                            <img src="images/eComID.png" alt="eComID">
+                            <div class="project-overlay">
+                                <div class="overlay-icon">
+                                    <i data-lucide="arrow-up-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-header-row">
+                                <h3 class="project-name">eComID</h3>
+                                <span class="project-category">preventing returns before they happen</span>
+                            </div>
+                            <p class="project-desc">eComID is a Swedish fashion-tech startup, backed by H&M Group Ventures, building technology to reduce e-commerce returns before they occur. During a nine-month collaboration, we conducted an extensive competitor analysis and developed strategic content to strengthen their positioning within a rapidly growing category.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Share Section -->
+        <section class="share">
+            <div class="container">
+                <div class="share-box">
+                    <h2 class="share-title">Dela denna portfölj med någon som bygger sin egen</h2>
+                    <p class="share-text">Känner du någon som behöver inspiration eller håller på att bygga sin egen portfölj just nu? Dela gärna denna sida och hjälp en vän att ta nästa steg i karriären.</p>
+                    <button id="share-linkedin" class="btn-black">Dela på LinkedIn</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact / Footer Section -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Left: Content -->
+                <div class="footer-content">
+                    <div class="section-meta text-white-40">04 / Contact</div>
+                    <h2 class="footer-title">Let's <br> Connect.</h2>
+                    <p class="footer-lead">Whether you're looking for a strategic partner or just want to talk growth, my inbox is always open.</p>
+                    
+                    <div class="footer-links">
+                        <a href="mailto:hello@andreabroberg.com" class="email-link">
+                            hello@andreabroberg.com
+                            <i data-lucide="arrow-up-right"></i>
+                        </a>
+                        <div class="social-links">
+                            <a href="#">LinkedIn</a>
+                            <a href="#">Instagram</a>
+                            <a href="#">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: iPhone Mockup -->
+                <div class="footer-mockup">
+                    <div class="iphone reveal-up">
+                        <div class="iphone-notch"></div>
+                        <div class="iphone-screen">
+                            <div class="iphone-content">
+                                <div class="iphone-avatar">AB</div>
+                                <div class="iphone-header">
+                                    <h3>Andrea Broberg</h3>
+                                    <p>Growth Strategist</p>
+                                </div>
+                                <div class="iphone-info-list">
+                                    <div class="info-item">
+                                        <div class="info-icon"><i data-lucide="mail"></i></div>
+                                        <div class="info-text">
+                                            <span class="info-label">Email</span>
+                                            <span class="info-value">hello@andreabroberg.com</span>
+                                        </div>
+                                    </div>
+                                    <div class="info-item">
+                                        <div class="info-icon"><i data-lucide="phone"></i></div>
+                                        <div class="info-text">
+                                            <span class="info-label">Phone</span>
+                                            <span class="info-value">+46 70 000 00 00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="iphone-buttons">
+                                <a href="mailto:hello@andreabroberg.com" class="btn-iphone-black">
+                                    <i data-lucide="mail"></i> Email Me
+                                </a>
+                                <button class="btn-iphone-accent">
+                                    <i data-lucide="download"></i> Download CV
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>© 2024 Andrea Broberg — Growth with intent</div>
+                <div class="footer-nav">
+                    <a href="#projects">Projects</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
