@@ -46,6 +46,35 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Project card tracking for GTM/GA4 via dataLayer
+    document.addEventListener('click', (e) => {
+        const projectLink = e.target.closest('a.project-card');
+        if (!projectLink) return;
+
+        const projectUrl = projectLink.href;
+        const projectName = projectLink.dataset.projectName
+            || projectLink.querySelector('.project-name')?.textContent?.trim()
+            || projectLink.getAttribute('aria-label')
+            || '';
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'project_click',
+            project_url: projectUrl,
+            project_name: projectName
+        });
+
+        const isPrimaryClick = e.button === 0;
+        const opensNewTab = projectLink.target === '_blank' || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey;
+
+        if (!isPrimaryClick || opensNewTab || e.defaultPrevented) return;
+
+        e.preventDefault();
+        setTimeout(() => {
+            window.location.href = projectUrl;
+        }, 150);
+    });
+
     // Portfolio Quiz Logic
     const quizQuestions = [
         "Do you have a clear Call to Action (CTA) on your hero section?",
@@ -215,7 +244,7 @@ https://andreabroberg.github.io/portfolio/`;
         if (refreshIcon) refreshIcon.style.animation = 'spin 1s linear infinite';
         
         try {
-            const response = await fetch('https://dummyjson.com/quotes/random');
+            const response = await fetch('/api/quote-of-the-day');
             if (!response.ok) throw new Error('Failed to fetch');
             const data = await response.json();
             
