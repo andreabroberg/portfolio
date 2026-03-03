@@ -64,15 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
             project_name: projectName
         });
 
-        const isPrimaryClick = e.button === 0;
-        const opensNewTab = projectLink.target === '_blank' || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey;
-
-        if (!isPrimaryClick || opensNewTab || e.defaultPrevented) return;
-
-        e.preventDefault();
-        setTimeout(() => {
-            window.location.href = projectUrl;
-        }, 150);
+        // Let the browser handle navigation normally so GTM link click triggers
+        // and "Wait for Tags" can work without custom interception.
     });
 
     // Portfolio Quiz Logic
@@ -317,16 +310,17 @@ https://andreabroberg.github.io/portfolio/`;
         const navbar = document.querySelector('.navbar');
         const quoteWidget = document.getElementById('quote-widget');
         if (!navbar) return;
+        const isMobile = window.innerWidth < 768;
         
         // Navbar effect
         if (window.scrollY > 50) {
-            navbar.style.padding = '1rem 1.5rem';
+            navbar.style.padding = isMobile ? '0.85rem 1rem' : '1rem 1.5rem';
             navbar.style.backgroundColor = 'rgba(5, 5, 5, 0.8)';
             navbar.style.backdropFilter = 'blur(10px)';
         } else {
-            navbar.style.padding = '2rem 1.5rem';
-            navbar.style.backgroundColor = 'transparent';
-            navbar.style.backdropFilter = 'none';
+            navbar.style.padding = isMobile ? '1rem' : '2rem 1.5rem';
+            navbar.style.backgroundColor = isMobile ? 'rgba(5, 5, 5, 0.84)' : 'transparent';
+            navbar.style.backdropFilter = isMobile ? 'blur(10px)' : 'none';
         }
 
         // Quote widget fade
