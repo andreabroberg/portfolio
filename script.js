@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const LEAD_API_ENDPOINT = 'https://formspree.io/f/mgolgoew';
     // Custom Cursor
     const cursor = document.getElementById('custom-cursor');
     const links = document.querySelectorAll('a, button');
@@ -194,20 +195,29 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = emailInput ? emailInput.value : '';
             trackEvent('email_submit', { email: email });
             
-            // API usage: POST request to save lead (mocking the endpoint)
+            const submitBtn = leadForm.querySelector('button');
             try {
-                console.log(`Saving lead to API: ${email}`);
-                // In a real scenario, this would be:
-                // await fetch('/api/leads', { method: 'POST', body: JSON.stringify({ email, score }) });
-                
-                // Simulate API delay
-                const submitBtn = leadForm.querySelector('button');
                 if (submitBtn) {
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'Sending...';
                 }
-                
-                await new Promise(resolve => setTimeout(resolve, 800));
+
+                const response = await fetch(LEAD_API_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email,
+                        score,
+                        source: 'portfolio_quiz'
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Lead save failed');
+                }
                 
                 if (leadBox) leadBox.style.display = 'none';
                 if (postLeadContent) postLeadContent.style.display = 'block';
@@ -217,6 +227,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 lucide.createIcons();
             } catch (err) {
                 console.error('Lead save error:', err);
+                trackEvent('lead_submit_failed');
+                alert('Could not save your email right now. Please try again.');
+            } finally {
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Get My Blueprint';
+                }
             }
         });
     }
