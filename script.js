@@ -39,6 +39,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const emailMeBtn = document.getElementById('email-me-btn');
+    if (emailMeBtn) {
+        emailMeBtn.addEventListener('click', () => {
+            window.location.href = 'mailto:andrea.broberg03@gmail.com';
+        });
+    }
+
+    const downloadCvBtn = document.getElementById('download-cv-btn');
+    if (downloadCvBtn) {
+        downloadCvBtn.addEventListener('click', () => {
+            const cvLink = document.createElement('a');
+            cvLink.href = 'images/Andrea_Broberg_CV.pdf';
+            cvLink.download = 'Andrea_Broberg_CV.pdf';
+            document.body.appendChild(cvLink);
+            cvLink.click();
+            cvLink.remove();
+        });
+    }
+
     function trackEvent(eventName, params = {}) {
         console.log(`[Event Tracked]: ${eventName}`, params);
         if (typeof gtag === 'function') {
