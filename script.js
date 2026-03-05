@@ -306,7 +306,18 @@ https://andreabroberg.github.io/portfolio/`;
     // Recycle Life Case Film: looping teaser -> open YouTube on click
     const casefilmWrapper = document.getElementById('casefilm-player-wrapper');
     const casefilmTrigger = document.getElementById('casefilm-play-trigger');
+    const casefilmTeaser = document.getElementById('casefilm-teaser');
     const CASEFILM_YOUTUBE_URL = 'https://youtu.be/NwvAOvpxTaA';
+    const CASEFILM_TEASER_MAX_SECONDS = 6;
+
+    if (casefilmTeaser) {
+        casefilmTeaser.addEventListener('timeupdate', () => {
+            if (casefilmTeaser.currentTime >= CASEFILM_TEASER_MAX_SECONDS) {
+                casefilmTeaser.currentTime = 0;
+                casefilmTeaser.play();
+            }
+        });
+    }
 
     function startCasefilmPlayback() {
         if (!casefilmWrapper) return;
