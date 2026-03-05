@@ -303,22 +303,14 @@ https://andreabroberg.github.io/portfolio/`;
         fetchQuote();
     }
 
-    // Recycle Life Case Film: animated cover -> main video on click
+    // Recycle Life Case Film: looping teaser -> open YouTube on click
     const casefilmWrapper = document.getElementById('casefilm-player-wrapper');
     const casefilmTrigger = document.getElementById('casefilm-play-trigger');
-    const casefilmMainVideo = document.getElementById('casefilm-main-video');
-    const casefilmTeaser = document.getElementById('casefilm-teaser');
+    const CASEFILM_YOUTUBE_URL = 'https://youtu.be/NwvAOvpxTaA';
 
     function startCasefilmPlayback() {
-        if (!casefilmWrapper || !casefilmMainVideo) return;
-        casefilmWrapper.classList.add('is-playing');
-        if (casefilmTeaser) casefilmTeaser.pause();
-        const playPromise = casefilmMainVideo.play();
-        if (playPromise && typeof playPromise.catch === 'function') {
-            playPromise.catch((err) => {
-                console.error('Case film playback error:', err);
-            });
-        }
+        if (!casefilmWrapper) return;
+        window.open(CASEFILM_YOUTUBE_URL, '_blank', 'noopener,noreferrer');
     }
 
     if (casefilmTrigger) {

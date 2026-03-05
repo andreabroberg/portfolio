@@ -152,17 +152,18 @@
                 
                 <div class="video-container reveal">
                     <div class="video-wrapper casefilm-player-wrapper" id="casefilm-player-wrapper">
-                        <video class="video-placeholder casefilm-teaser" id="casefilm-teaser" autoplay muted loop playsinline preload="metadata">
-                            <source src="images/recycle life bilder/omslag_casefilm.mp4?v=1" type="video/mp4">
-                            Din webblasare stodjer inte video-taggen.
-                        </video>
-                        <button class="video-overlay casefilm-play-trigger" id="casefilm-play-trigger" type="button" aria-label="Play case film">
+                        <iframe
+                            class="video-placeholder casefilm-teaser"
+                            id="casefilm-teaser"
+                            src="https://www.youtube.com/embed/NwvAOvpxTaA?autoplay=1&mute=1&loop=1&playlist=NwvAOvpxTaA&controls=0&modestbranding=1&rel=0&playsinline=1"
+                            title="Recycle Life Case Film Teaser"
+                            loading="lazy"
+                            allow="autoplay; encrypted-media; picture-in-picture"
+                            referrerpolicy="strict-origin-when-cross-origin">
+                        </iframe>
+                        <button class="video-overlay casefilm-play-trigger" id="casefilm-play-trigger" type="button" aria-label="Open case film on YouTube">
                             <i data-lucide="play"></i>
                         </button>
-                        <video class="casefilm-main-video" id="casefilm-main-video" controls playsinline preload="metadata">
-                            <source src="images/recycle life bilder/berghs_expolre_sj_casefilm.mp4" type="video/mp4">
-                            Din webblasare stodjer inte video-taggen.
-                        </video>
                     </div>
                 </div>
             </div>
