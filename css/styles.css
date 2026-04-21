@@ -1654,6 +1654,7 @@ body {
 
     .hero-footer {
         gap: 2.2rem;
+        align-items: flex-start;
     }
 
     .hero-description p,
@@ -1669,6 +1670,18 @@ body {
 
     .meta-location .line {
         width: 2rem;
+    }
+
+    .glassr-hero-image.full-width {
+        height: auto;
+        max-height: none;
+        aspect-ratio: 4 / 3;
+        object-fit: contain;
+        background-color: #f5f5f5;
+    }
+
+    .ecomid-outcome-grid {
+        grid-template-columns: 1fr !important;
     }
 
     .scroll-indicator {
