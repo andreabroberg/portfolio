@@ -131,14 +131,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const navbar = document.querySelector('.navbar');
         if (!navbar) return;
         const isMobile = window.innerWidth < 768;
-        const heroFadeDistance = Math.max(220, window.innerHeight * 0.42);
+        const heroFadeDistance = Math.max(320, window.innerHeight * 0.56);
         const heroFadeProgress = Math.min(window.scrollY / heroFadeDistance, 1);
-        const heroOpacity = Math.max(1 - heroFadeProgress * 1.35, 0);
+        const easedHeroFade = 1 - Math.pow(1 - heroFadeProgress, 2);
+        const heroOpacity = Math.max(1 - easedHeroFade, 0);
         
         if (heroContent) {
             heroContent.style.setProperty('--hero-content-opacity', heroOpacity.toFixed(3));
-            heroContent.style.setProperty('--hero-content-offset', `${(-heroFadeProgress * 1.75).toFixed(2)}rem`);
-            heroContent.style.setProperty('--hero-content-scale', (1 - heroFadeProgress * 0.025).toFixed(3));
+            heroContent.style.setProperty('--hero-content-offset', `${(-easedHeroFade * 1.35).toFixed(2)}rem`);
+            heroContent.style.setProperty('--hero-content-scale', (1 - easedHeroFade * 0.018).toFixed(3));
         }
 
         // Navbar effect
