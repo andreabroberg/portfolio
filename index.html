@@ -44,20 +44,6 @@
         <a href="#contact">Contact</a>
     </div>
 
-    <!-- Floating Quote Widget (Now Playing Style) -->
-    <div class="quote-widget" id="quote-widget">
-        <div class="widget-content">
-            <div class="widget-text">
-                <span class="widget-label">Quote of the Day</span>
-                <p id="quote-text" class="widget-quote">"Quality is not an act, it is a habit."</p>
-                <p id="quote-author" class="widget-author">Aristotle</p>
-            </div>
-            <button id="new-quote-btn" class="widget-refresh">
-                <i data-lucide="refresh-cw"></i>
-            </button>
-        </div>
-    </div>
-
     <main>
         <section class="hero">
             <div class="container">
@@ -65,9 +51,9 @@
                     <h1 class="hero-title reveal">Andrea <br> Broberg</h1>
                     <div class="hero-footer flex-between reveal" style="transition-delay: 0.4s">
                         <div class="hero-description">
-                            <p>Growth Marketer specializing in <span class="text-black">data-driven strategies</span> and scaling digital products through intent.</p>
+                            <p>Digital marketer focused on <span class="text-black">content, ads, and campaigns.</span></p>
                             <a href="#projects" class="hero-cta-link"><span aria-hidden="true">→</span> Explore Projects</a>
-                            <p class="hero-disclosure">User interactions on this website are tracked and analyzed.</p>
+                            <p class="hero-disclosure">A selection of <span class="text-black">work from my studies</span> in digital marketing.</p>
                         </div>
                         <div class="hero-meta">
                             <div class="meta-label">Portfolio 2025</div>
@@ -96,20 +82,19 @@
                         <div class="expertise-section">
                             <h3 class="expertise-label">// Core Expertise</h3>
                             <div class="expertise-tags">
-                                <div class="tag"><span class="dot"></span>BRAND &amp; POSITIONING</div>
-                                <div class="tag"><span class="dot"></span>PERFORMANCE MARKETING</div>
-                                <div class="tag"><span class="dot"></span>FULL-FUNNEL STRATEGY</div>
-                                <div class="tag"><span class="dot"></span>CONVERSION DATA &amp;<br> ANALYSIS</div>
-                                <div class="tag"><span class="dot"></span>MARKET &amp; COMPETITOR RESEARCH</div>
+                                <div class="tag"><span class="dot"></span>PAID SOCIAL ADVERTISING</div>
+                                <div class="tag"><span class="dot"></span>AD CREATIVE</div>
+                                <div class="tag"><span class="dot"></span>CAMPAIGN EXECUTION</div>
+                                <div class="tag"><span class="dot"></span>AUDIENCE TARGETING</div>
                             </div>
                         </div>
                     </div>
                     <div class="about-content reveal" style="transition-delay: 0.2s">
                         <div class="section-meta">02 / About</div>
                         <h2 class="section-title">About Me</h2>
-                        <p class="about-lead">Recently graduated from the <span class="text-black">Growth Marketing program at Berghs School of Communication</span>, I’m looking forward to starting my career within digital marketing and strategy.</p>
-                        <p class="about-text">With a background in <span class="text-black">service</span> and <span class="text-black">internship</span> experience in <span class="text-black">performance marketing at an agency,</span> I’ve developed the ability to bring structure to complex work, manage multiple priorities, and collaborate effectively in team environments. Working in <span class="text-black">service</span> has also taught me patience, strong communication skills, and how to stay focused and reliable in high pressure situations.</p>
-                        <p class="about-text">I’m motivated by understanding <span class="text-black">what truly drives results</span> where opportunities are missed and how something that already works can be made even better. For me, <span class="text-black">decisions shouldn’t rely on gut feeling alone, but be supported by strategy, analysis, and data.</span></p>
+                        <p class="about-lead">I recently graduated from the <span class="text-black">Growth Marketing program at Berghs School of Communication.</span> My way of working combines <span class="text-black">creativity with a data-driven approach,</span> and I have a strong interest in what actually drives results in digital advertising and how small changes can make a real impact.</p>
+                        <p class="about-text">During my internship at the communications agency <span class="text-black">Appleberg,</span> I worked with <span class="text-black">campaign-related tasks across digital platforms,</span> including setting up and following up on campaigns as well as producing ads and content. I also worked with adapting messaging based on <span class="text-black">target audience, channel, and performance.</span></p>
+                        <p class="about-text">With a background in <span class="text-black">service,</span> I’m used to working with customers in <span class="text-black">fast-paced environments</span> and delivering under pressure.</p>
                     </div>
                 </div>
             </div>
@@ -208,85 +193,6 @@
             </div>
         </section>
 
-        <!-- Lead Magnet: Portfolio Quiz -->
-        <section id="portfolio-quiz" class="quiz-section">
-            <div class="container">
-                <div class="quiz-container reveal">
-                    <div id="quiz-start-view">
-                        <div class="section-meta">// Growth Tool</div>
-                        <h2 class="quiz-title">Calculate Your Portfolio Conversion Score</h2>
-                        <p class="quiz-intro">Is your portfolio actually working for you? Answer some quiz questions to see how well your site converts visitors into opportunities.</p>
-                        <button id="start-quiz-btn" class="btn-black">Start Assessment</button>
-                    </div>
-
-                    <div id="quiz-questions-view" style="display: none;">
-                        <div class="quiz-progress">
-                            <div class="progress-bar"><div id="progress-fill"></div></div>
-                        </div>
-                        <h3 id="question-text" class="question-text">Do you have a clear Call to Action (CTA) on your hero section?</h3>
-                        <div class="quiz-options">
-                            <button class="quiz-opt-btn" data-value="1">Yes, absolutely</button>
-                            <button class="quiz-opt-btn" data-value="0">No, not yet</button>
-                        </div>
-                    </div>
-
-                    <div id="quiz-results-view" style="display: none;">
-                        <div class="results-header">
-                            <div class="score-circle">
-                                <span id="final-score">0</span>
-                                <small id="total-questions">/ 7</small>
-                            </div>
-                            <div class="score-label">Your Conversion Score</div>
-                        </div>
-                        
-                        <div id="static-summary" class="static-summary">
-                            <p>You've taken the first step towards a high-converting portfolio. See below how to unlock your full potential.</p>
-                        </div>
-
-                        <div id="quiz-lead-box" class="lead-capture-box">
-                            <h3>Get Your Full Improvement Plan</h3>
-                            <p>Enter your email to receive your detailed AI-powered improvement plan and the <strong>Portfolio Growth Blueprint (White Paper)</strong>.</p>
-                            <form id="lead-form" class="lead-form">
-                                <input type="email" id="lead-email" placeholder="your@email.com" required>
-                                <button type="submit" class="btn-black">Get My Blueprint</button>
-                            </form>
-                        </div>
-
-                        <div id="post-lead-content" style="display: none;">
-                            <div id="dynamic-analysis" class="dynamic-analysis">
-                                <p class="loading-text">Generating your custom analysis...</p>
-                            </div>
-                            
-                            <div class="whitepaper-download">
-                                <div class="download-card">
-                                    <div class="download-info">
-                                        <h4>Download Whitepaper: CRM as a Growth Engine</h4>
-                                        <p>You’ve analyzed your portfolio. Now explore why many companies collect customer data but struggle to use it effectively — and how CRM can turn data into stronger customer relationships and long-term growth.</p>
-                                    </div>
-                                    <a href="images/crm-growth-engine-whitepaper-v3.pdf" download class="btn-black">Download PDF</a>
-                                </div>
-                            </div>
-
-                            <div class="share-results">
-                                <p>Demonstrate your growth mindset. Share your score or the blueprint!</p>
-                                <button id="share-score-linkedin" class="btn-linkedin" type="button" aria-label="Share score on LinkedIn">
-                                    <span class="btn-linkedin-icon">
-                                        <i data-lucide="linkedin"></i>
-                                    </span>
-                                    <span class="btn-linkedin-copy">
-                                        <small>Share score</small>
-                                        <span>LinkedIn</span>
-                                    </span>
-                                    <span class="btn-linkedin-arrow">
-                                        <i data-lucide="arrow-up-right"></i>
-                                    </span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
     <!-- Contact / Footer Section -->
     <footer id="contact" class="footer">
