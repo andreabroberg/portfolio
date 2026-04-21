@@ -235,7 +235,7 @@ body {
 }
 
 .hero-description {
-    max-width: 32rem;
+    max-width: 40rem;
 }
 
 .hero-description p {
@@ -1357,7 +1357,7 @@ body {
     padding-bottom: 1rem;
 }
 
-.btn-iphone-black, .btn-iphone-accent {
+.btn-iphone-black, .btn-iphone-accent, .btn-iphone-linkedin {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1392,6 +1392,16 @@ body {
 .btn-iphone-accent:hover {
     background-color: rgba(0, 0, 0, 0.05);
     color: var(--text-black);
+}
+
+.btn-iphone-linkedin {
+    background-color: #dbeafe;
+    color: #0a66c2;
+}
+
+.btn-iphone-linkedin:hover {
+    background-color: #bfdbfe;
+    color: #084c91;
 }
 
 .footer-bottom {
