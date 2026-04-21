@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (downloadCvBtn) {
         downloadCvBtn.addEventListener('click', () => {
             const cvLink = document.createElement('a');
-            cvLink.href = 'images/Andrea_Broberg_CV.pdf';
-            cvLink.download = 'Andrea_Broberg_CV.pdf';
+            cvLink.href = 'images/andrea_broberg_cv_2026 (1).pdf';
+            cvLink.download = 'andrea_broberg_cv_2026.pdf';
             document.body.appendChild(cvLink);
             cvLink.click();
             cvLink.remove();
