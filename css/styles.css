@@ -109,6 +109,14 @@ body {
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--text-white);
+    opacity: 0;
+    transform: translateY(-0.35rem);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.navbar.is-scrolled .nav-logo {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .nav-links {
@@ -192,6 +200,10 @@ body {
 .hero-content {
     max-width: 1152px;
     margin: 0 auto;
+    opacity: var(--hero-content-opacity, 1);
+    transform: translate3d(0, var(--hero-content-offset, 0), 0) scale(var(--hero-content-scale, 1));
+    transition: opacity 0.12s linear, transform 0.12s linear;
+    will-change: opacity, transform;
 }
 
 .hero-title {
@@ -459,7 +471,7 @@ body {
 }
 
 .about-image .expertise-section {
-    margin-top: 1.5rem;
+    margin-top: 2.75rem;
     margin-bottom: 0;
     display: flex;
     flex-direction: column;
@@ -480,7 +492,7 @@ body {
 
 .about-image .expertise-label {
     text-align: left;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .expertise-tags {
@@ -492,7 +504,8 @@ body {
 .about-image .expertise-tags {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.6rem 1rem;
+    align-items: start;
+    gap: 0.95rem 2rem;
     max-width: 28rem;
     width: 100%;
 }
@@ -507,9 +520,9 @@ body {
 
 .about-image .expertise-tags .tag:nth-child(2),
 .about-image .expertise-tags .tag:nth-child(4) {
-    padding-left: 1.8rem;
-    padding-top: 0.12rem;
-    letter-spacing: 0.06em;
+    padding-left: 0;
+    padding-top: 0;
+    letter-spacing: 0.05em;
 }
 
 .about-image .expertise-tags .tag:nth-child(2) {

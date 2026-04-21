@@ -124,21 +124,45 @@ document.addEventListener('DOMContentLoaded', () => {
     reveals.forEach(reveal => revealObserver.observe(reveal));
 
 
-    // Navbar Scroll Effect
-    window.addEventListener('scroll', () => {
+    const heroContent = document.getElementById('hero-content');
+    let scrollTicking = false;
+
+    function updateScrollEffects() {
         const navbar = document.querySelector('.navbar');
         if (!navbar) return;
         const isMobile = window.innerWidth < 768;
+        const heroFadeDistance = Math.max(220, window.innerHeight * 0.42);
+        const heroFadeProgress = Math.min(window.scrollY / heroFadeDistance, 1);
+        const heroOpacity = Math.max(1 - heroFadeProgress * 1.35, 0);
         
+        if (heroContent) {
+            heroContent.style.setProperty('--hero-content-opacity', heroOpacity.toFixed(3));
+            heroContent.style.setProperty('--hero-content-offset', `${(-heroFadeProgress * 1.75).toFixed(2)}rem`);
+            heroContent.style.setProperty('--hero-content-scale', (1 - heroFadeProgress * 0.025).toFixed(3));
+        }
+
         // Navbar effect
         if (window.scrollY > 50) {
+            navbar.classList.add('is-scrolled');
             navbar.style.padding = isMobile ? '0.85rem 1rem' : '1rem 1.5rem';
             navbar.style.backgroundColor = 'rgba(5, 5, 5, 0.8)';
             navbar.style.backdropFilter = 'blur(10px)';
         } else {
+            navbar.classList.remove('is-scrolled');
             navbar.style.padding = isMobile ? '1rem' : '2rem 1.5rem';
             navbar.style.backgroundColor = isMobile ? 'rgba(5, 5, 5, 0.84)' : 'transparent';
             navbar.style.backdropFilter = isMobile ? 'blur(10px)' : 'none';
         }
-    });
+        scrollTicking = false;
+    }
+
+    function requestScrollUpdate() {
+        if (scrollTicking) return;
+        scrollTicking = true;
+        window.requestAnimationFrame(updateScrollEffects);
+    }
+
+    updateScrollEffects();
+    window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+    window.addEventListener('resize', requestScrollUpdate);
 });
